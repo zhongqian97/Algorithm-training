@@ -1,5 +1,0 @@
-- PS:这道题是上一年就会的题目，现在重做一遍，主要是为了巩固一下DP的思路，不过上一年就知道github，现在才开始使用，惭愧呐。
-- 链接：<http://www.lintcode.com/zh-cn/problem/longest-common-subsequence/>
-- 分析：
-- DP字符串类题目主要找的就是递归关系，找到就好做了很多
-- DP[i][k]=DP[i-1][k-1]+1 or =max(DP[i-1][k],DP[i][k-1])
