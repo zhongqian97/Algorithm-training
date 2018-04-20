@@ -7,6 +7,5 @@ public class Main{
 class Solution {
     public String convert(String s, int numRows) {
         int[][] a=new int[s.length()][numRows];
-	
     }
 }
