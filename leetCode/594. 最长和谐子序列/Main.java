@@ -1,28 +1,23 @@
+//超出时间限制！！！
 class Solution {
     public int findLHS(int[] nums) {
-        if(nums == null || nums.length <= 1){
-            return 0;
+        int dp = 0;
+        for(int i = 0 ; i < nums.length ; i ++ ){
+            int flag = 0;
+            int min = nums[i];
+            int max = nums[i];
+            for(int k = 0 ; k < nums.length ; k ++ ){
+                if(i != k)
+                    if(nums[k] - nums[i] == 1 || nums[k] - nums[i] == 0){
+                        min = Math.min(min,nums[k]);
+                        max = Math.max(max,nums[k]);
+                        if(flag == 0)flag ++;
+                        flag ++;
+                    }   
+            }
+            if(max - min == 1)
+                dp = Math.max(dp,flag);
         }
-        Arrays.sort(nums);
-        int preLength = 0;
-        int curLength = 1;
-        int max = 0;
-        for(int i = 0; i < nums.length - 1; i++){
-            if(nums[i + 1] == nums[i]){
-                curLength++;   
-            }
-            else if(nums[i + 1] == nums[i] + 1){
-                preLength = curLength;
-                curLength = 1;
-            }
-            else{
-                preLength = 0;
-                curLength = 1;
-            }
-            if(preLength != 0 && curLength + preLength > max){
-                max = curLength + preLength;
-            }
-        }
-        return max;
+        return dp;
     }
 }

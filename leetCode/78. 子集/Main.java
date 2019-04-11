@@ -2,7 +2,7 @@ class Solution {
     List<List<Integer>> l;
     public void run(int[] nums,int k,Stack<Integer> s){
         if(k < 0){
-        	l.add((Stack)s.clone());
+            l.add((Stack)s.clone());
             return;
         }
         run(nums,k - 1,s);
