@@ -15,12 +15,12 @@ class Solution {
             if(c >= '0' && c <= '9')break;//到达获取数字部分
             return 0;//不是以上情况，直接原地爆炸
         }
-        for( ; i < str.length() ; i ++){
+        for( ; i < str.length() ; i ++){//数字获取部分
             c = str.charAt(i);
             if(c >= '0' && c <= '9'){
                 sum *= 10;
                 sum += (int)c - (int)'0';
-                if(sum > Integer.MAX_VALUE){
+                if(sum > Integer.MAX_VALUE){//数字超出
                     sum = Long.MAX_VALUE - 1;
                     break;
                 }
